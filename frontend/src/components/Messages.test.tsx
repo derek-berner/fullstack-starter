@@ -12,14 +12,14 @@ const mockMessages = {
   messages: [
     {
       id: '1',
-      message: 'Hello, this is a test message!',
-      user_id: 'anonymous',
+      content: 'Hello, this is a test message!',
+      author: 'Anonymous',
       created_at: '2024-01-01T00:00:00Z',
     },
     {
       id: '2',
-      message: 'Another test message',
-      user_id: 'anonymous',
+      content: 'Another test message',
+      author: 'Anonymous',
       created_at: '2024-01-01T00:01:00Z',
     },
   ],
@@ -80,10 +80,10 @@ describe('Messages Component', () => {
     expect(messageContent).toHaveTextContent('Hello, this is a test message!');
   });
 
-  test('should display user information', async () => {
+  test('should display author information', async () => {
     renderMessages();
-    const userId = await screen.findByTestId('message-user-1');
-    expect(userId).toHaveTextContent('anonymous');
+    const author = await screen.findByTestId('message-author-1');
+    expect(author).toHaveTextContent('Anonymous');
   });
 
   test('should display pagination controls', async () => {

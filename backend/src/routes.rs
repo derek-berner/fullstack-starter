@@ -30,7 +30,7 @@ async fn get_messages(
 
     // Get paginated messages
     let messages = sqlx::query_as::<_, Message>(
-        "SELECT id, content, created_at FROM messages ORDER BY created_at DESC LIMIT $1 OFFSET $2"
+        "SELECT id, content, author, created_at FROM messages ORDER BY created_at DESC LIMIT $1 OFFSET $2"
     )
     .bind(per_page)
     .bind(offset)

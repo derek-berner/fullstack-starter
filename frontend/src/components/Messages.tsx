@@ -5,8 +5,8 @@ import './Messages.css';
 
 interface Message {
   id: string;
-  message: string;
-  user_id: string;
+  content: string;
+  author: string;
   created_at: string;
 }
 
@@ -46,15 +46,15 @@ const Messages: React.FC = () => {
         {data?.messages.map((message) => (
           <div key={message.id} className="message" data-testid={`message-${message.id}`}>
             <div className="message-header">
-              <span className="user-id" data-testid={`message-user-${message.id}`}>
-                {message.user_id}
+              <span className="author" data-testid={`message-author-${message.id}`}>
+                {message.author}
               </span>
               <span className="timestamp" data-testid={`message-time-${message.id}`}>
                 {format(new Date(message.created_at), 'MMM d, yyyy HH:mm')}
               </span>
             </div>
             <div className="message-content" data-testid={`message-content-${message.id}`}>
-              {message.message}
+              {message.content}
             </div>
           </div>
         ))}

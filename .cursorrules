@@ -1,1 +1,2 @@
 Execute all long running docker commands detached.
+Never run NPM tests without disabling watch mode.
