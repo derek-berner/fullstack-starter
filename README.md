@@ -139,6 +139,30 @@ aws --endpoint-url=http://localhost:4566 s3 ls
 3. Run tests
 4. Submit a pull request
 
+## Project Renaming
+
+The project can be easily renamed using the provided script:
+
+```bash
+node scripts/rename-project.js <new-name>
+```
+
+For example, to rename the project to "myapp":
+```bash
+node scripts/rename-project.js myapp
+```
+
+This will:
+- Update the database name to `<new-name>_db`
+- Rename the main table and related database objects
+- Update the backend model names
+- Update the frontend application title
+
+After running the script, you'll need to:
+1. Recreate your database with the new name
+2. Run the migrations again
+3. Rebuild and restart your application
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
