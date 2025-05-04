@@ -152,7 +152,7 @@ The backend provides the following endpoints:
 ## Database
 
 The PostgreSQL database is configured with the following credentials:
-- Database: game_db
+- Database: example_db
 - User: postgres
 - Password: postgres
 - Port: 5432 

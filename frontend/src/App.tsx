@@ -10,7 +10,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="App">
         <header className="App-header">
-          <h1>Game Application</h1>
+          <h1>Example Application</h1>
         </header>
         <main>
           <Messages />

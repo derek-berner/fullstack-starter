@@ -4,7 +4,7 @@ use uuid::Uuid;
 use sqlx::FromRow;
 
 #[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
-pub struct Game {
+pub struct Example {
     pub id: i32,
     pub name: String,
     pub description: Option<String>,
@@ -13,13 +13,13 @@ pub struct Game {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct CreateGame {
+pub struct CreateExample {
     pub name: String,
     pub description: Option<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct UpdateGame {
+pub struct UpdateExample {
     pub name: Option<String>,
     pub description: Option<String>,
 }
